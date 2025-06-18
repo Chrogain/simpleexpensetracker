@@ -5,7 +5,7 @@ EXPENSES_FILE = 'expenses.json'
 
 def read_expenses():
     if not os.path.exists(EXPENSES_FILE):
-        return []
+        return {}
     try:
         with open(EXPENSES_FILE, 'r') as file:
             return json.load(file)
@@ -14,8 +14,8 @@ def read_expenses():
         user_input = input("Do you want to delete the corrupt file and continue? (yes/no): ").strip().lower()
         if user_input == 'yes':
             os.remove(EXPENSES_FILE)
-            print("The corrupt file has been deleted. Returning an empty list.")
-            return []
+            print("The corrupt file has been deleted. Returning an empty dictionary.")
+            return {}
         else:
             print("Please delete the corrupt file manually to proceed.")
             exit(1)
