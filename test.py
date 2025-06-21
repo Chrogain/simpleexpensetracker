@@ -1,5 +1,6 @@
 from filemanager import read_expenses, write_expenses
 from add_expense import add_expense
+from remove_expenses import delete_expenses
 from summary import summary_expenses
 from view_all_expenses import list_expenses
 from pprint import pprint
@@ -12,7 +13,9 @@ while choice != '6':
         desc = input("What was the expenses for?")
         amt = input("How much was the expenses?") 
         add_expense(desc, amt)
-    
+    if choice == '2':
+        delete_id = input("Which expense would you like to delete? Please key in the ID: ")
+        delete_expenses(delete_id)    
     choice = input("Enter your choice (1/2/3/4/5/6): ")
 print("Exiting expense tracker now... \n Thank you for using expenses tracker!")
 
