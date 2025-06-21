@@ -2,9 +2,6 @@ from filemanager import read_expenses, write_expenses
 from datetime import datetime
 
 def add_expense(description, amount):
-    if amount <= 0:
-        print("Invalid amount. Please enter the amount again.")
-        return
     try:
         amount = float(amount)
         if amount <= 0:
@@ -31,7 +28,3 @@ def add_expense(description, amount):
 
     write_expenses(expenses)
     print(f"Expense ID: {id} added.")
-    
-
-            
-        
