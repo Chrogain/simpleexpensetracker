@@ -3,6 +3,7 @@ from datetime import datetime
 
 def overwrite_expenses(id, description, amount):
     expenses = read_expenses()
+    amount = float(amount)
     expenses[str(id)] = {
         'date': datetime.now().isoformat(),
         'description' : description,
