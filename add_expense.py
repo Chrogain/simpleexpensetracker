@@ -7,6 +7,9 @@ def add_expense(description, amount):
         return
     try:
         amount = float(amount)
+        if amount <= 0:
+            print("Invalid amount. Please enter the amount again.")
+            return
         if round(amount, 2) != amount:
             raise ValueError("Please only enter an amount up to 2 decimal places.")
     except ValueError as e:
