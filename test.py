@@ -1,10 +1,8 @@
-from filemanager import read_expenses, write_expenses
 from add_expense import add_expense
 from remove_expenses import delete_expenses
-from append_expenses import overwrite_expenses, append_expenses
+from append_expenses import append_expenses
 from view_all_expenses import list_expenses
 from summary import summary_expenses
-from pprint import pprint
 
 # Read the contents of the JSON file
 print("Welcome to expense tracker! \n What would you like to do? \n Press 1 to add an expense. \n Press 2 to delete an expense. \n Press 3 for an overview of your expenses. \n Press 4 for your total expenses. \n Press 5 to view your expenses for a certain month. \n Press 6 to append expenses. \n Press 7 to exit.")
