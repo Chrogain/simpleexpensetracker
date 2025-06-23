@@ -9,14 +9,19 @@ def summary_expenses(month=None):
 
     total_amount = 0
     if not month:
-        for expense in expenses:
+        for expense in expenses.values():
             total_amount += expense['amount']
 
-        print("Total expenses: $" + str(total_amount))
+        print(f"Total expenses: ${total_amount:.2f}")
 
     else:
-        for expense in expenses:
-            if datetime.fromisoformat(expense['date']).month == month:
-                total_amount += expense['amount']
+        try:
+            month_num = datetime.strptime(month, "%B").month
+            for expense in expenses.values():
+             if datetime.fromisoformat(expense['date']).month == month_num:
+                    total_amount += expense['amount']
 
-        print("Total expenses for " + str(month) + " : $" + str(total_amount))
+            print(f"Total expenses for {month}: ${total_amount:.2f}")
+        
+        except ValueError as e:
+            print("Please provide the full name of the month.")
