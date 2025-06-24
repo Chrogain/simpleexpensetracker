@@ -24,8 +24,8 @@ def append_expenses(id):
         return
     else:
         del expenses[id]
-        desc = input("What was the expenses for?")
-        amt = input("How much was the expenses?") 
+        desc = input("What was the expenses for? ")
+        amt = input("How much was the expenses? ") 
         overwrite_expenses(id, desc, amt)
         
 

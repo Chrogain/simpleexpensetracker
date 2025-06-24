@@ -5,14 +5,15 @@ def delete_expenses(id):
     if not expenses:
         print("No expenses found.")
         return
+   
+    elif str(id) in expenses:
+        del expenses[str(id)]
+        write_expenses(expenses)
+        print(f'Expense ID {id} deleted successfully.')
 
-    if str(id) not in expenses:
+    else:
         print(f'Expense ID {id} is not found in the tracker. Please key in another value.')
         return
-   
-    if str(id) in expenses:
-        del expenses[id]
-        print(f'Expense ID {id} deleted successfully.')
 
 
         
